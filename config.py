@@ -7,9 +7,9 @@ class Config:
     UPLOADED_PHOTOS_DEST ='app/static/img'
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://omtatah:12@localhost/blogs'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://omtatah:12@localhost/blogr'
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://omtatah:12@localhost/blogs'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://omtatah:12@localhost/blogr'
     DEBUG = True
 
 class ProdConfig(Config):
@@ -19,7 +19,7 @@ class ProdConfig(Config):
         Config:The parent configuration class with General configuration settings
     '''
     # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://omtatah:12@localhost/blogs'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://omtatah:12@localhost/blogr'
     
 config_options = {
 'development':DevConfig,
