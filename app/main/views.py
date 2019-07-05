@@ -21,6 +21,22 @@ def index():
     return render_template('index.html', sports=sports, travel=travel, fitness=fitness, fashion=fashion, food=food)
 
 
+@main.route('/subscription', methods=['GET', 'POST'])
+def subscription():
+    subscription_form = SubscribeForm()
+
+    if subscription_form.validate_on_submit():
+        new_subscriber = Subscriber(subscriber_name=subscription_form.subscriber_name.data,
+                                    subscriber_email=subscription_form.subscriber_email.data)
+
+        db.session.add(new_subscriber)
+        db.session.commit()
+
+        return redirect(url_for('main.index'))
+
+    return render_template('subscription.html', subscription_form=subscription_form)
+
+
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username=uname).first()
@@ -191,19 +207,3 @@ def delete_comment(id):
 
     flash('Comment has been deleted')
     return redirect(url_for('main.blog', id=blog_id))
-
-
-@main.route('/subscription', methods=['GET', 'POST'])
-def subscription():
-    subscription_form = SubscribeForm()
-
-    if subscription_form.validate_on_submit():
-        new_subscriber = Subscriber(subscriber_name=subscription_form.subscriber_name.data,
-                                    subscriber_email=subscription_form.subscriber_email.data)
-
-        db.session.add(new_subscriber)
-        db.session.commit()
-
-        return redirect(url_for('main.index'))
-
-    return render_template('subscription.html', subscription_form=subscription_form)
