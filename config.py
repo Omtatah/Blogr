@@ -1,15 +1,28 @@
+import os
 
 class Config:
-    pass
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-class ProdConfig(Config):
-    pass
+    UPLOADED_PHOTOS_DEST ='app/static/img'
 
 class TestConfig(Config):
-    pass
-
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://omtatah:12@localhost/blogs'
 class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://omtatah:12@localhost/blogs'
     DEBUG = True
 
-config_options ={"production":ProdConfig,"default":DevConfig,"testing":TestConfig}
-
+class ProdConfig(Config):
+    '''
+    Production configuration child class
+    Args:
+        Config:The parent configuration class with General configuration settings
+    '''
+    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://omtatah:12@localhost/blogs'
+    
+config_options = {
+'development':DevConfig,
+'production':ProdConfig,
+'test':TestConfig
+}
