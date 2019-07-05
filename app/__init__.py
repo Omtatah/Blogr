@@ -8,8 +8,8 @@ from config import config_options
 
 photos = UploadSet('photos', IMAGES)
 bootstrap = Bootstrap()
-login_manager = LoginManager()
 db = SQLAlchemy()
+login_manager = LoginManager()
 
 login_manager.login_view = 'auth.login'
 login_manager.session_protection = 'strong'
