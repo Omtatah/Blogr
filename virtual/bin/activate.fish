@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/omtatah/Desktop/excerciseFiles/Blogr#J/virtual"
+set -gx VIRTUAL_ENV "/home/omtatah/Documents/moringa-school-projects/Blogr/virtual"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
