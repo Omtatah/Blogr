@@ -3,23 +3,14 @@
 
 {%block content%}
 
-<style>
-    body {
-
-        /* background-image: url("../static/img/blocks.jpeg"); */
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-</style>
-
 
 <!-- Jumbotron -->
 <!-- <div class="jumbotron text-center mdb-color lighten-2 white-text mx-2 mb-5"> -->
 
-    <!-- Title -->
-    <h2 class="card-title h2">Looking for a Place for Holidays?</h2>
+<!-- Title -->
+<h2 class="card-title h2" style="text-align: center; color: white;">Looking for a Place for Holidays?</h2>
 
-    <hr class="my-4 rgba-white-light">
+<hr class="my-4 rgba-white-light">
 
 </div>
 <!-- Jumbotron -->
@@ -37,4 +28,18 @@
         {{macro.displayBlogs(blogs)}}
     </div>
 </div>
+
+<style>
+    .card-title h2 {
+        color: white;
+        text-align: center;
+    }
+
+    body {
+
+        background-image: url("../static/img/lonely.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
 {%endblock%}

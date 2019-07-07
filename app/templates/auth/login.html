@@ -16,10 +16,18 @@
             <!-- Login form -->
             <h4 class="login">Enter Your Credentials to Login</h4>
             {{wtf.quick_form(login_form)}}
-            <p> Don't have an account? <a href="{{url_for('auth.register')}}">Sign Up here</a></p>
+            <p class="don't"> Don't have an account? <a href="{{url_for('auth.register')}}">Sign Up here</a></p>
         </div>
         <div clas="col-md-2"> </div>
     </div>
 </div>
 
+<style>
+    body {
+        background-image: url("../../static/img/light-bulb-12.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    }
+</style>
 {% endblock%}
