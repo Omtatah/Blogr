@@ -45,8 +45,5 @@ In case of any bugs or questions please contact me:
 
 ## License
 [MIT](./License)
- Copyright (c) 2019 **Murtallah Omtatah**
+ Copyright (c) {2019} 
 
-## License
-
-MIT Copyright (c) {2019} Murtallah Omtatah
