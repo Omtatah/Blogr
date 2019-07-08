@@ -6,19 +6,18 @@ from ..models import User,Blog,Comment,Subscriber
 from flask_login import login_required,current_user
 from .. import db,photos
 import json
+from .requests import get_quotes
 
 @main.route('/')
 def index():
-    
-
     sports = Blog.get_blogs('')
     travel = Blog.get_blogs('Travel-Blog')
     fitness = Blog.get_blogs('Fitness-Blog')
     fashion = Blog.get_blogs('Fashion-Blog')
     food = Blog.get_blogs('Food-Blog')
     politics = Blog.get_blogs('Political-Blog')
-
-    return render_template('index.html', sports = sports, travel = travel, fitness = fitness, fashion = fashion, food = food )
+    quote = get_quotes()
+    return render_template('index.html', sports = sports, travel = travel, fitness = fitness, fashion = fashion, food = food, quote=quote )
 
 @main.route('/user/<uname>')
 def profile(uname):
