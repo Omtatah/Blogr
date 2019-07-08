@@ -44,6 +44,6 @@ In case of any bugs or questions please contact me:
 * email: omtatahmurtallah@gmail.com
 
 ## License
-[MIT](./License)
- Copyright (c) {2019} 
+[MIT Copyright (c) {2019}](./License)
+  
 
