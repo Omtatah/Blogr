@@ -4,19 +4,20 @@
 
 <style>
     body {
-        background-image: url("../static/img/rocks.jpg");
+        /* background-image: url("../static/img/rocks.jpg");
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover; */
+        background-color: #D7D8DA;
     }
 </style>
-<div class="col-md-1"></div>
+<!-- <div class="col-md-1"></div>
 <div class="container-fluid quotes">
     {# <div class="col-md-12">
         <h4 class="text-center">Quotes</h4>
         <p class="text-center">"{{random.quote}}"</p>
         <p class="text-center"><strong>Author: {{random.author}}</strong></p>
     </div> #}
-</div>
+</div> -->
 {% for alert in get_flashed_messages() %}
 <div class="alert alert-danger">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -109,10 +110,10 @@
         </div>
     </div>
 </div>
-<footer class="page-footer font-small unique-color-dark pt-4">
+<footer style ='background-color: 4ABBAD' class="page-footer font-small unique-color-dark pt-4">
 
     <!-- Footer Elements -->
-    <div class="container">
+    <div style ='background-color: 4ABBAD'class="container">
 
         <!-- Call to action -->
         <ul class="list-unstyled list-inline text-center py-2">
@@ -136,4 +137,5 @@
 
 </footer>
 <!-- Footer -->
+
 {% endblock%}
